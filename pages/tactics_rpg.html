@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tactics RPG | Wei Zheng Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/flexslider.css">
+	<link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+
+	<nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
+
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-content-md-center" id="navbars">
+				<ul class="navbar-nav">
+					<li class="nav-item lang-en"><a class="nav-link" href="../index.html">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section class="site-hero" id="section-home" data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row intro-text align-items-center justify-content-center">
+				<div class="col-md-11 text-center pt-5">
+					<h1 class="site-animate"><strong class="d-block">Tactics RPG</strong></h1>
+					<div class="about-me-font">	
+						<ul class="list-unstyled lang-en">
+							<li><b>Type: </b>Personal Project</li>
+							<li><b>Links: </b><a href="https://github.com/weizheng2/TacticsGame" target="_blank">GitHub</a>,
+										 </b><a href="https://weizh2.itch.io/tactics-rpg" target="_blank">Itchio</a>
+							<li><b>Tools: </b>Unity</li>
+						</ul>		
+						<p class="lang-en">Tactics RPG is a 3D turn-based strategy game featuring different magical skills and strategic combat.<br />
+							Inspired by games like "Final Fantasy Tactics Advance," this demo showcases some mechanics that define the tactics genre.<br />
+							Having always been a fan of tactical RPGs, I wanted to at least implement the fundamental aspects of tactical combat.
+							</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="site-section">
+		<div class="container">
+
+			<!-- Main Images -->
+			<div class="row grid">
+				<div class="single-portfolio col-sm-6">
+					<div class="relative">
+						<div class="overlay overlay-bg"></div>
+						<img class="image img-fluid-reduced-5" src="../images/TacticsRPG/tactics_front_1.png" alt="">
+					</div>                                        
+				</div>
+				<div class="single-portfolio col-sm-6">
+					<div class="relative">
+						<div class="overlay overlay-bg"></div>
+						<img class="image img-fluid-reduced-5" src="../images/TacticsRPG/tactics_front_2.png" alt="">
+					</div>                                      
+				</div>                            
+			</div>
+
+			<!-- Movement -->
+			<div class="row grid">	
+				<div class="single-portfolio col-sm-7">
+					<div class="lang-en">
+						<ul>
+							<h3>Character Movement</h3>
+							<li>A* Pathfinding for movement.</li>
+							<li>The game utilizes the A* pathfinding algorithm to calculate the shortest route between tiles and select the optimal path.</li>
+							<li>Characters dynamically rotate to align with the next tile, ensuring correct orientation during the movement across the path.</li>
+						</ul>
+					</div>                                           
+				</div>
+				<div class="single-portfolio col-sm-5">
+					<div class="relative">
+						<img class="image img-fluid" src="../images/TacticsRPG/movement.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<!-- Enemy AI -->
+			<div class="row grid">	
+				<div class="single-portfolio col-sm-7">
+					<div class="lang-en">
+						<ul>
+							<h3>Enemy AI</h3>
+							<li>The enemy chooses which action to take based on a weighted scoring system.</li>		
+							<li>The AI iterates through each possible movement tile and skill and updates the action score depending on some personalized values.</li>		
+							<li>For the movement
+								<ul>
+									<li>Distance to Healing Objects: Prioritizes tiles closer to healing objects for characters with low health.</li>
+									<li>Distance to Enemies: Characters with low health avoid getting too close to enemies, while healthy ones may look for positions near enemies.</li>
+									<li>Distance to Allies: Characters prefer tiles close to allies to enable multiple attacks on a enemy in one turn.</li>
+								</ul>
+							</li>	
+							<li>For the skill
+								<ul>
+									<li>Damage Potential: Scores higher for skills with greater damage output.</li>
+									<li>Number of Targets: Skills affecting multiple targets are prioritized.</li>
+									<li>Kill Potential: Skills with the ability to finish off enemies are highly scored.</li>
+									<li>Healing: Evaluates healing skills based on health restored relative to the current health, also taking into account over-healing penalties.</li>
+								</ul>
+							</li>			
+						</ul>
+					</div>                                      
+				</div>
+				<div class="single-portfolio col-sm-5">
+					<div class="relative">
+						<img class="image img-fluid" src="../images/TacticsRPG/enemy_ai.png" alt="">
+					</div>
+				</div>
+			</div>
+			
+			<!-- Skills -->
+			<div class="row grid">	
+				<div class="single-portfolio col-sm-7">
+					<div class="lang-en">
+						<ul>
+							<h3>Skills</h3>
+							<li>A* Pathfinding to search for possible positions to use skills.</li>
+							<li>Each skill is associated with various particle effects and a character animation.</li>
+							<li>Managed with ScriptableObjects, allowing comfortable value manipulation and easy assignment to different characters.</li>	
+						</ul>
+					</div>                         
+				</div>
+				<div class="single-portfolio col-sm-5">
+					<div class="relative">
+						<img class="image img-fluid" src="../images/TacticsRPG/skill_effect.png" alt="">
+						<img class="image img-fluid" src="../images/TacticsRPG/skill_effect_2.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<!-- Skills Pattern -->
+			<div class="row grid">	
+				<div class="single-portfolio col-sm-7">
+					<div class="lang-en">
+						<ul>	
+							<h3>Skill Patterns</h3>
+							<li>Used text files to define and manage various skill shapes and patterns, allowing for easy customization and scalability.</li>
+							<li>This approach allows for a wide range of skill patterns, from linear attacks to area-of-effect spells.</li>
+							<li>Allows quick iterations to test new skills without having to modify the code.</li>
+						</ul>
+					</div>                                       
+				</div>
+				<div class="single-portfolio col-sm-5">
+					<div class="relative">
+						<img class="image img-fluid" src="../images/TacticsRPG/skill_pattern_1.png" alt="">
+						<img class="image img-fluid" src="../images/TacticsRPG/skill_pattern_2.png" alt="">
+					</div>
+				</div>
+			</div>
+
+	</section>
+
+	<footer class="site-footer" id="section-contact">
+		<div class="container">
+			<div class="row mb-5">
+				<p class="col-12 text-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="../js/vendor/jquery.min.js"></script>
+	<script src="../js/vendor/jquery-migrate-3.0.1.min.js"></script>
+	<script src="../js/vendor/popper.min.js"></script>
+	<script src="../js/vendor/bootstrap.min.js"></script>
+
+	<script src="../js/vendor/jquery.easing.1.3.js"></script>
+
+	<script src="../js/vendor/jquery.stellar.min.js"></script>
+	<script src="../js/vendor/jquery.waypoints.min.js"></script>
+
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+	<script src="../js/custom.js"></script>
+	
+    </body>zº
+    </html>
